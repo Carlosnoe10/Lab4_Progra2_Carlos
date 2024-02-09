@@ -195,7 +195,7 @@ public class Lab4_PrograII_Carlos {
                                 break;
                             case 2:
                                 for (int i = 0; i < ((Usuario) personas.get(usuario)).getAgentes().size(); i++) {
-                                    System.out.println(""+((Usuario) personas.get(usuario)).getAgentes().get(i));
+                                    System.out.println(""+((Usuario) personas.get(usuario)).getAgentes().get(i).toString());
                                 }
                                 break;
                             default:
