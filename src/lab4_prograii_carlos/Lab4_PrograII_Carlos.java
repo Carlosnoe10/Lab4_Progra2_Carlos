@@ -27,8 +27,9 @@ public class Lab4_PrograII_Carlos {
         do{
             System.out.println("Inicio de sesion");
             System.out.println("Ingrese su nombre de usuario o correo electronico");
-            int usuario=verificarUsuario(input.nextLine(),personas);
             String name=input.nextLine();
+            int usuario=verificarUsuario(name,personas);
+            
             if (usuario==341) {
                 System.out.println("inicio de sesion erroneo");
             }else{
