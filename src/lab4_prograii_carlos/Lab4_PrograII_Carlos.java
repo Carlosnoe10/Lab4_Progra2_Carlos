@@ -29,7 +29,7 @@ public class Lab4_PrograII_Carlos {
             System.out.println("Ingrese su nombre de usuario o correo electronico");
             int usuario=verificarUsuario(input.nextLine(),personas);
             String name=input.nextLine();
-            if (usuario<0) {
+            if (usuario==341) {
                 System.out.println("inicio de sesion erroneo");
             }else{
                 System.out.println("bienvenido/a, "+((Usuario)personas.get(usuario)).getNombreDeUsu());
@@ -58,7 +58,7 @@ public class Lab4_PrograII_Carlos {
     }
 
     private static int verificarUsuario(String inicioSesion, ArrayList<Personas> usuarios) {
-        int usuarioEncontrado=-1;
+        int usuarioEncontrado=341;
         for (int i = 0; i < usuarios.size(); i++) {
             if (inicioSesion.equals(((Usuario)usuarios.get(i)).getCorreo())||inicioSesion.equals(((Usuario)usuarios.get(i)).getNombreDeUsu())) {
                usuarioEncontrado=i;
