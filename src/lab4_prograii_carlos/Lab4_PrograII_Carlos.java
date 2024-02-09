@@ -27,10 +27,12 @@ public class Lab4_PrograII_Carlos {
         do{
             System.out.println("Inicio de sesion");
             System.out.println("Ingrese su nombre de usuario o correo electronico");
-            int usuario=verificarUsuario(input.nextLine(),personas,0);
+            int usuario=verificarUsuario(input.nextLine(),personas);
             String name=input.nextLine();
-            if (usuario==1) {
-                System.out.println("inicio de sesio con exito");
+            if (usuario<0) {
+                System.out.println("inicio de sesion erroneo");
+            }else{
+                System.out.println("bienvenido/a, "+((Usuario)personas.get(usuario)).getNombreDeUsu());
             }
             
                     System.out.println("1: Ejercicio 1");
@@ -55,15 +57,13 @@ public class Lab4_PrograII_Carlos {
         System.out.println("Saliendo del programa");
     }
 
-    private static int verificarUsuario(String inicioSesion, ArrayList<Personas> usuarios, int i) {
-        if (inicioSesion.equals(((Usuario) usuarios.get(i)).getCorreo()) || inicioSesion.equals(((Usuario) usuarios.get(i)).getNombreDeUsu())) {
-            return i;
-        } else if (i <= usuarios.size()) {
-            i=verificarUsuario(inicioSesion, usuarios, i + 1);
-        } else {
-
+    private static int verificarUsuario(String inicioSesion, ArrayList<Personas> usuarios) {
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (inicioSesion.equals(((Usuario)usuarios.get(i)).getCorreo())||inicioSesion.equals(((Usuario)usuarios.get(i)).getNombreDeUsu())) {
+                return i;
+            }
         }
-        return i;
+        return -1;
     }
 
 }
