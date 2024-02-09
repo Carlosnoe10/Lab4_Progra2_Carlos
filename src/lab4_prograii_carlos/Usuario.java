@@ -2,15 +2,47 @@ package lab4_prograii_carlos;
 
 import java.util.ArrayList;
 
-public class Usuario extends Personas{
+public class Usuario extends Personas {
+
     public String Correo;
     public String NombreDeUsu;
-    ArrayList<Agentes> agentes= new ArrayList();
-    
-    
-    public Usuario(String Correo, String NombreDeUsu) {
+    public String Contrasenya;
+    public double Dinero;
+    ArrayList<Agentes> agentes = new ArrayList();
+
+    public Usuario(String Nombre, int Numero) {
+        super(Nombre, Numero);
+    }
+
+    public Usuario(String Correo, String NombreDeUsu, String Contrasenya, double Dinero, String Nombre, int Numero) {
+        super(Nombre, Numero);
         this.Correo = Correo;
         this.NombreDeUsu = NombreDeUsu;
+        this.Contrasenya = Contrasenya;
+        this.Dinero = Dinero;
+    }
+
+    public Usuario(String Correo, String NombreDeUsu, String Contrasenya, double Dinero) {
+        this.Correo = Correo;
+        this.NombreDeUsu = NombreDeUsu;
+        this.Contrasenya = Contrasenya;
+        this.Dinero = Dinero;
+    }
+
+    public String getContrasenya() {
+        return Contrasenya;
+    }
+
+    public void setContrasenya(String Contrasenya) {
+        this.Contrasenya = Contrasenya;
+    }
+
+    public double getDinero() {
+        return Dinero;
+    }
+
+    public void setDinero(double Dinero) {
+        this.Dinero = Dinero;
     }
 
     public ArrayList<Agentes> getAgentes() {
@@ -21,7 +53,6 @@ public class Usuario extends Personas{
         this.agentes = agentes;
     }
 
-    
     public String getCorreo() {
         return Correo;
     }
@@ -39,10 +70,11 @@ public class Usuario extends Personas{
     }
 
     @Override
+
+
     public String toString() {
-        return "Usuario{" + "Correo=" + Correo + ", NombreDeUsu=" + NombreDeUsu + '}';
+        return "Usuario{" + "Correo=" + Correo + ", NombreDeUsu=" + NombreDeUsu + ", Contrasenya=" + Contrasenya + ", Dinero=" + Dinero + ", agentes=" + agentes + '}';
     }
     
-    
-    
+
 }
