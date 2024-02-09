@@ -64,7 +64,7 @@ public class Lab4_PrograII_Carlos {
                         } catch (Exception e) {
                             System.out.println("Ingrese un numero dentro del menu");
                         } finally {
-
+                            elegir = input.nextInt();
                         }
                     } while (elegir != 1 && elegir != 2);
 
