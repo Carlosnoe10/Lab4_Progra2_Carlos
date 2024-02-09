@@ -11,6 +11,10 @@ public class AgenteTipoFuego extends Agentes {
     public AgenteTipoFuego(double Precio, int PuntosDeVida, int PuntosDeDanyio, String Nombre, int Numero) {
         super(Precio, PuntosDeVida, PuntosDeDanyio, Nombre, Numero);
     }
+
+    public AgenteTipoFuego(double Precio, int PuntosDeVida, int PuntosDeDanyio, String Nombre) {
+        super(Precio, PuntosDeVida, PuntosDeDanyio, Nombre);
+    }
     
 
     public double getPrecio() {

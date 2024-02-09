@@ -8,6 +8,10 @@ public class AgenteTipoViento extends Agentes{
         super(Precio, PuntosDeVida, PuntosDeDanyio);
     }
 
+    public AgenteTipoViento(double Precio, int PuntosDeVida, int PuntosDeDanyio, String Nombre) {
+        super(Precio, PuntosDeVida, PuntosDeDanyio, Nombre);
+    }
+
     public AgenteTipoViento(double Precio, int PuntosDeVida, int PuntosDeDanyio, String Nombre, int Numero) {
         super(Precio, PuntosDeVida, PuntosDeDanyio, Nombre, Numero);
     }

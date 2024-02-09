@@ -12,6 +12,10 @@ abstract public class Personas {
 
     public Personas() {
     }
+
+    public Personas(String Nombre) {
+        this.Nombre = Nombre;
+    }
     
     
     
