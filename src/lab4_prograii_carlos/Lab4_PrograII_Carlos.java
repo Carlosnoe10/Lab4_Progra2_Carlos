@@ -62,6 +62,7 @@ public class Lab4_PrograII_Carlos {
         for (int i = 0; i < usuarios.size(); i++) {
             if (inicioSesion.equals(((Usuario)usuarios.get(i)).getCorreo())||inicioSesion.equals(((Usuario)usuarios.get(i)).getNombreDeUsu())) {
                usuarioEncontrado=i;
+                System.out.println("eee");
             }
         }
         return usuarioEncontrado;
