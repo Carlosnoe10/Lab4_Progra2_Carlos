@@ -34,6 +34,14 @@ public class Lab4_PrograII_Carlos {
                 System.out.println("inicio de sesion erroneo");
             }else{
                 System.out.println("bienvenido/a, "+((Usuario)personas.get(usuario)).getNombreDeUsu());
+                String pw;
+                do {
+                    System.out.println("Ingrese la contraseña");
+                    pw=input.nextLine();
+                    if (!(pw.equals(((Usuario)personas.get(usuario)).getContrasenya()))) {
+                        System.out.println("ingrese la contraseña verdadera de esta cuenta");
+                    }
+                } while (!(pw.equals(((Usuario)personas.get(usuario)).getContrasenya())));
             }
             
                     System.out.println("1: Ejercicio 1");
