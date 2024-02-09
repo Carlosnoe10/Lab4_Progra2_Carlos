@@ -16,6 +16,10 @@ public class AgenteTipoTierra extends Agentes{
         super(Precio, PuntosDeVida, PuntosDeDanyio);
     }
 
+    public AgenteTipoTierra(double Precio, int PuntosDeVida, int PuntosDeDanyio, String Nombre, int Numero) {
+        super(Precio, PuntosDeVida, PuntosDeDanyio, Nombre, Numero);
+    }
+
     public double getPrecio() {
         return Precio;
     }
