@@ -54,17 +54,14 @@ public class Lab4_PrograII_Carlos {
 
                     break;
                 case (2):
-                    System.out.println("1. Comprar Agentes");
-                    System.out.println("2. Ver tus agentes");
+
                     int elegir = 0;
                     do {
-
-                        try {
-                            elegir = input.nextInt();
-                        } catch (Exception e) {
-                            System.out.println("Ingrese un numero dentro del menu");
-                        } finally {
-                            elegir = input.nextInt();
+                        System.out.println("1. Comprar Agentes");
+                        System.out.println("2. Ver tus agentes");
+                        elegir = input.nextInt();
+                        if (elegir != 1 && elegir != 2) {
+                            System.out.println("Ingrese una opcion valida");
                         }
                     } while (elegir != 1 && elegir != 2);
 
