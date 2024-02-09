@@ -1,10 +1,6 @@
-
 package lab4_prograii_carlos;
 
-public class ClasePrueba {
-
-    
-    
+public class Agentes extends Personas{
     
     
 }
