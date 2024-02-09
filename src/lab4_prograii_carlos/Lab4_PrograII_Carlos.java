@@ -4,6 +4,7 @@
  */
 package lab4_prograii_carlos;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -16,12 +17,22 @@ public class Lab4_PrograII_Carlos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        ArrayList <Personas> personas=new ArrayList();
         Scanner sc = new Scanner(System.in);
         Scanner input = new Scanner(System.in);
        
         int menu;
         do{
-
+            System.out.println("Inicio de sesion");
+            System.out.println("Ingrese su nombre de usuario");
+            String name=input.nextLine();
+            try{
+                
+            }catch(Exception e){
+                System.out.println("");
+        }finally{
+                
+            }
                     System.out.println("1: Ejercicio 1");
                     System.out.println("2: Ejercicio 2");
                     System.out.println("3: Ejercicio 3");
