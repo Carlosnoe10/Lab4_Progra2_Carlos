@@ -80,116 +80,126 @@ public class Lab4_PrograII_Carlos {
                                 System.out.println("10. comprar a SOL BADGUY (tipo fuego, 3000 paVos");
                                 System.out.println("11. comprar a Goku (tipo tierra, 8000 paVos)");
                                 System.out.println("12. comprar a Satoru Gojo (tipo agua, 12000 paVos)");
-                                int elegirAgente=sc.nextInt();
-                                        switch(elegirAgente){
-                                            case 1:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<50) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoTierra(50, 100, 30, "montapuercos"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-500);
-                                                      System.out.println("Se a añadido el agente con exiito");
-                                                }
-                                                break;
-                                            case 2:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<1000) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoFuego(1000, 1000, 100, "Tarnished"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-1000);
-                                                      System.out.println("Se a añadido el agente con exiito");
-                                                }
-                                                break;
-                                            case 3:if (((Usuario)personas.get(usuario)).getDinero()<600) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoViento(600, 500, 40, "Jett"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-600);
-                                                      System.out.println("Se a añadido el agente con exiito");
-                                                }
-                                                break;
-                                            case 4:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<500) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoAgua(500, 200, 30, "Asuka"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-500);
-                                                      System.out.println("Se a añadido el agente con exiito");
-                                                }
-                                                break;
-                                            case 5:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<3000) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoFuego(2000, 200, 30, "Malenia"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-3000);
-                                                      System.out.println("Se a añadido el agente con exiito");
-                                                }
-                                                break;
-                                            case 6:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<2000) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoViento(2000, 200, 30, "Dante"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-2000);
-                                                      System.out.println("Se a añadido el agente con exito");
-                                                }
-                                                break;
-                                            case 7:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<800) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoTierra(800, 200, 30, "Godrick"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-800);
-                                                      System.out.println("Se a añadido el agente con exito");
-                                                }
-                                                break;
-                                            case 8:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<100) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoAgua(100, 200, 30, "Juan"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-100);
-                                                      System.out.println("Se a añadido el agente con exito");
-                                                }
-                                                break;
-                                            case 9:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<1100) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoViento(1100, 200, 30, "Kazuya"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-1100);
-                                                      System.out.println("Se a añadido el agente con exito");
-                                                }
-                                                break;
-                                            case 10:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<3000) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoFuego(3000, 200, 30, "SOL BADGUY"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-3000);
-                                                }
-                                                break;
-                                            case 11:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<8000) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoTierra(8000, 200, 30, "Goku"));
-                                                      ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-8000);
-                                                      System.out.println("Se a añadido el agente con exito");
-                                                }
-                                                break;
-                                            case 12:
-                                                if (((Usuario)personas.get(usuario)).getDinero()<12000) {
-                                                    System.out.println("no tienes suficiente dinero para comprar este agente");
-                                                }else{
-                                                    ((Usuario)personas.get(usuario)).getAgentes().add(new AgenteTipoTierra(12000, 200, 30, "Satoru Gojo"));
-                                                    ((Usuario)personas.get(usuario)).setDinero(((Usuario)personas.get(usuario)).getDinero()-12000);
-                                                    System.out.println("Se a añadido el agente con exito");
-                                                }
-                                                break;
-                            }
-                                
+                                int elegirAgente = sc.nextInt();
+                                switch (elegirAgente) {
+                                    case 1:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 50) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoTierra(50, 100, 30, "montapuercos"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 500);
+                                            System.out.println("Se a añadido el agente con exiito");
+                                        }
+                                        break;
+                                    case 2:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 1000) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoFuego(1000, 1000, 100, "Tarnished"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 1000);
+                                            System.out.println("Se a añadido el agente con exiito");
+                                        }
+                                        break;
+                                    case 3:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 600) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoViento(600, 500, 40, "Jett"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 600);
+                                            System.out.println("Se a añadido el agente con exiito");
+                                        }
+                                        break;
+                                    case 4:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 500) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoAgua(500, 200, 30, "Asuka"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 500);
+                                            System.out.println("Se a añadido el agente con exiito");
+                                        }
+                                        break;
+                                    case 5:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 3000) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoFuego(2000, 200, 30, "Malenia"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 3000);
+                                            System.out.println("Se a añadido el agente con exiito");
+                                        }
+                                        break;
+                                    case 6:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 2000) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoViento(2000, 200, 30, "Dante"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 2000);
+                                            System.out.println("Se a añadido el agente con exito");
+                                        }
+                                        break;
+                                    case 7:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 800) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoTierra(800, 200, 30, "Godrick"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 800);
+                                            System.out.println("Se a añadido el agente con exito");
+                                        }
+                                        break;
+                                    case 8:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 100) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoAgua(100, 200, 30, "Juan"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 100);
+                                            System.out.println("Se a añadido el agente con exito");
+                                        }
+                                        break;
+                                    case 9:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 1100) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoViento(1100, 200, 30, "Kazuya"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 1100);
+                                            System.out.println("Se a añadido el agente con exito");
+                                        }
+                                        break;
+                                    case 10:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 3000) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoFuego(3000, 200, 30, "SOL BADGUY"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 3000);
+                                        }
+                                        break;
+                                    case 11:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 8000) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoTierra(8000, 200, 30, "Goku"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 8000);
+                                            System.out.println("Se a añadido el agente con exito");
+                                        }
+                                        break;
+                                    case 12:
+                                        if (((Usuario) personas.get(usuario)).getDinero() < 12000) {
+                                            System.out.println("no tienes suficiente dinero para comprar este agente");
+                                        } else {
+                                            ((Usuario) personas.get(usuario)).getAgentes().add(new AgenteTipoTierra(12000, 200, 30, "Satoru Gojo"));
+                                            ((Usuario) personas.get(usuario)).setDinero(((Usuario) personas.get(usuario)).getDinero() - 12000);
+                                            System.out.println("Se a añadido el agente con exito");
+                                        }
+                                        break;
+
+                                }
+
+                                break;
+                            case 2:
+                                for (int i = 0; i < ((Usuario) personas.get(usuario)).getAgentes().size(); i++) {
+                                    System.out.println(""+((Usuario) personas.get(usuario)).getAgentes().get(i));
+                                }
+                                break;
+                            default:
+                                System.out.println("Elija una opcion valida");
                                 break;
                         }
                         break;
@@ -209,7 +219,6 @@ public class Lab4_PrograII_Carlos {
         for (int i = 0; i < usuarios.size(); i++) {
             if (inicioSesion.equals(((Usuario) usuarios.get(i)).getCorreo()) || inicioSesion.equals(((Usuario) usuarios.get(i)).getNombreDeUsu())) {
                 usuarioEncontrado = i;
-                System.out.println("eee");
             }
         }
         return usuarioEncontrado;
