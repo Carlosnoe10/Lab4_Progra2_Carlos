@@ -58,12 +58,13 @@ public class Lab4_PrograII_Carlos {
     }
 
     private static int verificarUsuario(String inicioSesion, ArrayList<Personas> usuarios) {
+        int usuarioEncontrado=-1;
         for (int i = 0; i < usuarios.size(); i++) {
             if (inicioSesion.equals(((Usuario)usuarios.get(i)).getCorreo())||inicioSesion.equals(((Usuario)usuarios.get(i)).getNombreDeUsu())) {
-                return i;
+               usuarioEncontrado=i;
             }
         }
-        return -1;
+        return usuarioEncontrado;
     }
 
 }
