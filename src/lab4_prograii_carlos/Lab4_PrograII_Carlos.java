@@ -42,11 +42,11 @@ public class Lab4_PrograII_Carlos {
                         System.out.println("ingrese la contraseña verdadera de esta cuenta");
                     }
                 } while (!(pw.equals(((Usuario)personas.get(usuario)).getContrasenya())));
-            }
+            }System.out.println("Bienvenida a Legacy of Power");
             
-                    System.out.println("1: Ejercicio 1");
-                    System.out.println("2: Ejercicio 2");
-                    System.out.println("3: Ejercicio 3");
+                    System.out.println("1: Ranked");
+                    System.out.println("2: Ver Agentes");
+                    System.out.println("3: ");
                     System.out.println("4: Salir");
                     menu = sc.nextInt();
             switch (menu){
@@ -54,6 +54,19 @@ public class Lab4_PrograII_Carlos {
 
                     break;
                 case (2):
+                    System.out.println("1. Comprar Agentes");
+                    System.out.println("2. Ver tus agentes");
+                    int elegir = 0;
+                    do {
+
+                        try {
+                            elegir = input.nextInt();
+                        } catch (Exception e) {
+                            System.out.println("Ingrese un numero dentro del menu");
+                        } finally {
+
+                        }
+                    } while (elegir != 1 && elegir != 2);
 
                     break;
                 case (3):
