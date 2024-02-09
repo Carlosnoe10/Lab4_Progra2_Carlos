@@ -14,7 +14,9 @@ public class Lab4_PrograII_Carlos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("a");
+        System.out.println("a");
+        System.out.println("aaaa");
     }
     
 }
