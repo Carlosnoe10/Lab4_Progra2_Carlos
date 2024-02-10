@@ -51,6 +51,7 @@ public class Usuario extends Personas {
 
     public void setAgentes(ArrayList<Agentes> agentes) {
         this.agentes = agentes;
+        
     }
 
     public String getCorreo() {

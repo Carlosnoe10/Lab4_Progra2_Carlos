@@ -21,6 +21,12 @@ public class Lab4_PrograII_Carlos {
     public static void main(String[] args) {
         ArrayList<Personas> personas = new ArrayList();
         personas.add(new Usuario("odioariotgames@gmail.com", "SuTilin", "mantecahn", 50.65));
+//        for (int i = 0; i < personas.size(); i++) {
+//            ((Usuario) personas.get(i)).getAgentes().set(0, new AgenteTipoAgua(2000, 100, 30, "Zero"));
+//            ((Usuario) personas.get(i)).getAgentes().set(1, new AgenteTipoFuego(3000, 50, 32, "two"));
+//            ((Usuario) personas.get(i)).getAgentes().set(2, new AgenteTipoViento(4000, 150, 40, "Tri"));
+//        }
+
         personas.add(new Usuario("britanycarrasco@gmail.com", "SuTilina", "awadeuwu", 30000.00));
         Scanner sc = new Scanner(System.in);
         Scanner input = new Scanner(System.in);
@@ -55,14 +61,8 @@ public class Lab4_PrograII_Carlos {
                 menu = sc.nextInt();
                 switch (menu) {
                     case (1):
-                        int PermaPOM = 0,
-                         PermaPOM2 = 0;
                         Random Num = new Random();
                         int R1i = Num.nextInt(personas.size()) + 0;
-                        Agentes AG,
-                         AG2;
-                        Usuario usu = (Usuario) personas.get(R1i);
-                        System.out.println("El Rival es: " + ((Usuario) personas.get(R1i)).getNombreDeUsu());
                         for (int i = 0; i < 1; i++) {
                             if (usuario == R1i) {
                                 R1i = Num.nextInt(personas.size()) + 0;
@@ -71,54 +71,88 @@ public class Lab4_PrograII_Carlos {
                                 i++;
                             }
                         }
-                        Usuario zero = (Usuario) personas.get(usuario);
-                        ListarPersonajes(zero);
+                        ((Usuario) personas.get(R1i)).getAgentes().add(new AgenteTipoAgua(2000, 100, 30, "Zero"));
+                        ((Usuario) personas.get(R1i)).getAgentes().add(new AgenteTipoFuego(3000, 50, 32, "two"));
+                        ((Usuario) personas.get(R1i)).getAgentes().add(new AgenteTipoViento(4000, 150, 40, "Tri"));
+                        boolean Bandere = true;
 
-                        for (int i = 0; i < 1; i++) {
-                            System.out.println("Ingrese el numero del agente que desea usar");
-                            PermaPOM = sc.nextInt();
-                            if (zero.getAgentes().size() < PermaPOM && PermaPOM >= 0) {
+                        while (Bandere != false) {
 
-                                System.out.println("Su agente es: " + zero.getAgentes().get(PermaPOM).toString());
-                                i++;
+                            
+                            int PermaPOM = 0,
+                                    PermaPOM2 = 0;
+
+                            Agentes AG,
+                                    AG2;
+                            Usuario usu = (Usuario) personas.get(R1i);
+                            System.out.println("El Rival es: " + ((Usuario) personas.get(R1i)).getNombreDeUsu());
+
+                            Usuario zero = (Usuario) personas.get(usuario);
+                            ListarPersonajes(zero);
+
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese el numero del agente que desea usar");
+                                PermaPOM = sc.nextInt();
+                                if ((zero.getAgentes().size() > PermaPOM) && (PermaPOM >= 0)) {
+
+                                    System.out.println("Su agente es: " + zero.getAgentes().get(PermaPOM).toString());
+                                    i++;
+                                } else {
+                                    System.out.println("Numero Incorrecto");
+                                    i--;
+                                }
+                            }
+                            ListarPersonajes(usu);
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese a quien desea atacar");
+                                PermaPOM2 = sc.nextInt();
+                                if ((usu.getAgentes().size() > PermaPOM2) && (PermaPOM2 >= 0)) {
+                                    AG2 = usu.getAgentes().get(PermaPOM2);
+                                    System.out.println("Su agente es: " + usu.getAgentes().get(PermaPOM2).toString());
+                                    i++;
+                                } else {
+                                    System.out.println("Numero Incorrecto");
+                                    i--;
+                                }
+                            }
+                            double danio1 = zero.getAgentes().get(PermaPOM).Daño(usu.getAgentes().get(PermaPOM2));
+                            System.out.println("El daño es" + danio1);
+                            int AtaqueAzul = usu.getAgentes().get(PermaPOM2).getPuntosDeVida();
+                            int NuevaVida = (int) danio1;
+                            usu.getAgentes().get(PermaPOM2).setPuntosDeVida(AtaqueAzul - NuevaVida);
+
+                            for (int i = 0; i < 1; i++) {
+
+                                int RandomPJ = Num.nextInt(zero.getAgentes().size()) + 0;
+                                if (zero.getAgentes().get(RandomPJ).getPuntosDeVida() >= 0) {
+                                    double danio2 = usu.getAgentes().get(PermaPOM2).Daño(zero.getAgentes().get(PermaPOM));
+                                    int AtaqueRojo = zero.getAgentes().get(PermaPOM).getPuntosDeVida();
+                                    int Nuevavida2 = (int) danio2;
+                                    zero.getAgentes().get(PermaPOM).setPuntosDeVida(AtaqueRojo - Nuevavida2);
+                                    i++;
+                                } else {
+                                    i--;
+                                }
+                            }
+                            if (zero.getAgentes().isEmpty()||usu.getAgentes().isEmpty()) {
+                                Bandere=false;
+                            }
+                            int cont = 0;
+                            int cont1 = 0;
+                            for (int i = 0; i < zero.getAgentes().size(); i++) {
+                                cont += zero.getAgentes().get(i).getPuntosDeVida();
+                            }
+                            for (int i = 0; i < usu.getAgentes().size(); i++) {
+                                cont += usu.getAgentes().get(i).getPuntosDeVida();
+                            }
+                            if ((cont < 0) || (cont1 < 0)) {
+                                Bandere = false;
+                                System.out.println("Fin");
                             } else {
-                                System.out.println("Numero Incorrecto");
-                                i--;
+                                Bandere = true;
+
                             }
                         }
-                        ListarPersonajes(usu);
-                        for (int i = 0; i < 1; i++) {
-                            System.out.println("Ingrese a quien desea atacar");
-                            PermaPOM2 = sc.nextInt();
-                            if (usu.getAgentes().size() < PermaPOM2 && PermaPOM2 >= 0) {
-                                AG2 = usu.getAgentes().get(PermaPOM2);
-                                System.out.println("Su agente es: " + usu.getAgentes().get(PermaPOM2).toString());
-                                i++;
-                            } else {
-                                System.out.println("Numero Incorrecto");
-                                i--;
-                            }
-                        }
-                        double danio1 = zero.getAgentes().get(PermaPOM).Daño(usu.getAgentes().get(PermaPOM2));
-                        System.out.println("El daño es" + danio1);
-                        int AtaqueAzul = usu.getAgentes().get(PermaPOM2).getPuntosDeVida();
-                        int NuevaVida = Integer.parseInt(Double.toString(danio1));
-                        usu.getAgentes().get(PermaPOM2).setPuntosDeVida(AtaqueAzul - NuevaVida);
-
-                        for (int i = 0; i < 1; i++) {
-
-                            int RandomPJ = Num.nextInt(zero.getAgentes().size()) + 0;
-                            if (zero.getAgentes().get(RandomPJ).getPuntosDeVida() > 0) {
-                                double danio2 = usu.getAgentes().get(PermaPOM2).Daño(zero.getAgentes().get(PermaPOM));
-                                int AtaqueRojo = zero.getAgentes().get(PermaPOM).getPuntosDeVida();
-                                int Nuevavida2 = Integer.parseInt(Double.toString(danio2));
-                                zero.getAgentes().get(PermaPOM).setPuntosDeVida(AtaqueRojo - Nuevavida2);
-                                i++;
-                            }else{
-                                i--;
-                            }
-                        }
-
                         break;
 
                     //usu == Rival
@@ -294,7 +328,12 @@ public class Lab4_PrograII_Carlos {
 
     public static void ListarPersonajes(Usuario nom) {
         for (int i = 0; i < nom.getAgentes().size(); i++) {
-            System.out.println(i + nom.getAgentes().get(i).toString());
+            if (nom.getAgentes().get(i).getPuntosDeVida()>0) {
+                System.out.println(i + nom.getAgentes().get(i).toString());
+            }else{
+                nom.getAgentes().remove(i);
+            }
+            
         }
     }
 
