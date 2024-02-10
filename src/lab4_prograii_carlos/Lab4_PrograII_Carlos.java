@@ -4,7 +4,9 @@
  */
 package lab4_prograii_carlos;
 
+import com.sun.source.tree.DoWhileLoopTree;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -53,8 +55,74 @@ public class Lab4_PrograII_Carlos {
                 menu = sc.nextInt();
                 switch (menu) {
                     case (1):
+                        int PermaPOM = 0,
+                         PermaPOM2 = 0;
+                        Random Num = new Random();
+                        int R1i = Num.nextInt(personas.size()) + 0;
+                        Agentes AG,
+                         AG2;
+                        Usuario usu = (Usuario) personas.get(R1i);
+                        System.out.println("El Rival es: " + ((Usuario) personas.get(R1i)).getNombreDeUsu());
+                        for (int i = 0; i < 1; i++) {
+                            if (usuario == R1i) {
+                                R1i = Num.nextInt(personas.size()) + 0;
+                                i--;
+                            } else {
+                                i++;
+                            }
+                        }
+                        Usuario zero = (Usuario) personas.get(usuario);
+                        ListarPersonajes(zero);
+
+                        for (int i = 0; i < 1; i++) {
+                            System.out.println("Ingrese el numero del agente que desea usar");
+                            PermaPOM = sc.nextInt();
+                            if (zero.getAgentes().size() < PermaPOM && PermaPOM >= 0) {
+
+                                System.out.println("Su agente es: " + zero.getAgentes().get(PermaPOM).toString());
+                                i++;
+                            } else {
+                                System.out.println("Numero Incorrecto");
+                                i--;
+                            }
+                        }
+                        ListarPersonajes(usu);
+                        for (int i = 0; i < 1; i++) {
+                            System.out.println("Ingrese a quien desea atacar");
+                            PermaPOM2 = sc.nextInt();
+                            if (usu.getAgentes().size() < PermaPOM2 && PermaPOM2 >= 0) {
+                                AG2 = usu.getAgentes().get(PermaPOM2);
+                                System.out.println("Su agente es: " + usu.getAgentes().get(PermaPOM2).toString());
+                                i++;
+                            } else {
+                                System.out.println("Numero Incorrecto");
+                                i--;
+                            }
+                        }
+                        double danio1 = zero.getAgentes().get(PermaPOM).Daño(usu.getAgentes().get(PermaPOM2));
+                        System.out.println("El daño es" + danio1);
+                        int AtaqueAzul = usu.getAgentes().get(PermaPOM2).getPuntosDeVida();
+                        int NuevaVida = Integer.parseInt(Double.toString(danio1));
+                        usu.getAgentes().get(PermaPOM2).setPuntosDeVida(AtaqueAzul - NuevaVida);
+
+                        for (int i = 0; i < 1; i++) {
+
+                            int RandomPJ = Num.nextInt(zero.getAgentes().size()) + 0;
+                            if (zero.getAgentes().get(RandomPJ).getPuntosDeVida() > 0) {
+                                double danio2 = usu.getAgentes().get(PermaPOM2).Daño(zero.getAgentes().get(PermaPOM));
+                                int AtaqueRojo = zero.getAgentes().get(PermaPOM).getPuntosDeVida();
+                                int Nuevavida2 = Integer.parseInt(Double.toString(danio2));
+                                zero.getAgentes().get(PermaPOM).setPuntosDeVida(AtaqueRojo - Nuevavida2);
+                                i++;
+                            }else{
+                                i--;
+                            }
+                        }
 
                         break;
+
+                    //usu == Rival
+                    //zero == aliado
                     case (2):
 
                         int elegir = 0;
@@ -195,7 +263,7 @@ public class Lab4_PrograII_Carlos {
                                 break;
                             case 2:
                                 for (int i = 0; i < ((Usuario) personas.get(usuario)).getAgentes().size(); i++) {
-                                    System.out.println(""+((Usuario) personas.get(usuario)).getAgentes().get(i).toString());
+                                    System.out.println("" + ((Usuario) personas.get(usuario)).getAgentes().get(i).toString());
                                 }
                                 break;
                             default:
@@ -222,6 +290,12 @@ public class Lab4_PrograII_Carlos {
             }
         }
         return usuarioEncontrado;
+    }
+
+    public static void ListarPersonajes(Usuario nom) {
+        for (int i = 0; i < nom.getAgentes().size(); i++) {
+            System.out.println(i + nom.getAgentes().get(i).toString());
+        }
     }
 
 }

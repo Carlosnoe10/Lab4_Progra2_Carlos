@@ -48,11 +48,21 @@ public class AgenteTipoTierra extends Agentes{
         this.PuntosDeDanyio = PuntosDeDanyio;
     }
 
-    public double Daño() {
+    @Override
+    public double Daño(Agentes Ragente) {
         Random Num = new Random();
+        int danio = this.PuntosDeDanyio;
         int R1 = Num.nextInt(7) + 0;
         if (R1 < 7) {
-            return this.PuntosDeDanyio;
+            if (Ragente instanceof AgenteTipoAgua) {
+                return danio * 1.3;
+            } else if (Ragente instanceof AgenteTipoFuego) {
+                return danio * 0.7;
+            } else if (Ragente instanceof AgenteTipoViento) {
+                return danio * 0.4;
+            } else {
+                return danio;
+            }
         } else {
             return 0;
         }

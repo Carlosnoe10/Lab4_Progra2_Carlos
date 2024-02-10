@@ -31,8 +31,32 @@ public class Agentes extends Personas{
         this.PuntosDeVida = PuntosDeVida;
         this.PuntosDeDanyio = PuntosDeDanyio;
     }
+
+    public double getPrecio() {
+        return Precio;
+    }
+
+    public void setPrecio(double Precio) {
+        this.Precio = Precio;
+    }
+
+    public int getPuntosDeVida() {
+        return PuntosDeVida;
+    }
+
+    public void setPuntosDeVida(int PuntosDeVida) {
+        this.PuntosDeVida = PuntosDeVida;
+    }
+
+    public int getPuntosDeDanyio() {
+        return PuntosDeDanyio;
+    }
+
+    public void setPuntosDeDanyio(int PuntosDeDanyio) {
+        this.PuntosDeDanyio = PuntosDeDanyio;
+    }
     
-    public double Daño(){
+    public double Daño(Agentes Ragente){
       
         return 0;
     }
